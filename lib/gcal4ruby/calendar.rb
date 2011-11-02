@@ -253,7 +253,7 @@ module GCal4Ruby
           @selected = ele.attributes["value"] == "true" ? true : false
           when "link"
           if ele.attributes['rel'] == 'edit'
-            @edit_feed = ele.attributes['href']
+            @edit_uri = ele.attributes['href']
           end
           when 'accesslevel'
           @editable = (ele.attributes["value"] == 'editor' or ele.attributes["value"] == 'owner' or ele.attributes["value"] == 'root')

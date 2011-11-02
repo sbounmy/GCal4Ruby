@@ -1,7 +1,9 @@
 #!/usr/bin/ruby
 
+$:.unshift File.dirname("lib/*")
 require 'rubygems'
 require 'gcal4ruby'
+
 include GCal4Ruby
 
 @service = Service.new
@@ -75,7 +77,8 @@ def calendar_test
   else
     failed "#{c.title} not equal to #{cal.title}"
   end
-  
+  puts "sleeping 5 sec..."
+  sleep 5
   puts "4. Delete Calendar"
   if cal.delete and not cal.exists?
     successful

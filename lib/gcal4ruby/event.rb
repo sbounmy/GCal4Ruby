@@ -327,7 +327,7 @@ module GCal4Ruby
             @where = ele.attributes['valueString']
           when "link"
             if ele.attributes['rel'] == 'edit'
-              @edit_feed = ele.attributes['href']
+              @edit_uri = ele.attributes['href']
             end
           when "who"        
             @attendees << {:email => ele.attributes['email'], :name => ele.attributes['valueString'], :role => ele.attributes['rel'].gsub("http://schemas.google.com/g/2005#event.", ""), :status => ele.elements["gd:attendeeStatus"] ? ele.elements["gd:attendeeStatus"].attributes['value'].gsub("http://schemas.google.com/g/2005#event.", "") : ""}
